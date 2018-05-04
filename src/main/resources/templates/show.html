@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/homepage">Home</a><br/>
+<ul class ="list-unstyled">
+    <ul th:each="aRoom : ${rooms}">
+Description:<li th:text="${aRoom.description}"></li>
+Cable:<li th:text="${aRoom.cable}"></li>
+Private Bathroon:<li th:text="${aRoom.bathroom}"></li>
+Wifi:<li th:text="${aRoom.wifi}"></li>
+Availability:<li th:text="${aRoom.rented}"></li>
+    </ul>
+</ul>
+</body>
+</html>

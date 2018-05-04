@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org.thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+<body>
+<form action="/saveroom" th:object="${aRoom}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    Address:<input type="text" th:field="*{address}"/>
+    <span th:if="${#fields.hasErrors('address')}"
+          th:errors="*{address}"></span><br/>
+    City<input type="text" th:field="*{city}"/>
+    <span th:if="${#fields.hasErrors('city')}"
+          th:errors="*{city}"></span><br/>
+    State<input type="text" th:field="*{state}"/>
+    <span th:if="${#fields.hasErrors('state')}"
+          th:errors="*{state}"></span><br/>
+    Price<input type="text" th:field="*{price}"/>
+    <span th:if="${#fields.hasErrors('price')}"
+          th:errors="*{price}"></span><br/>
+    description<input type="text" th:field="*{description}"/>
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span><br/>
+    bathroom:<input type="text" th:field="*{bathroom}"/>
+    <span th:if="${#fields.hasErrors('bathroom')}"
+          th:errors="*{bathroom}"></span><br/>
+    wifi:<input type="checkbox" th:field="*{wifi}" th:check="*{wifi}"/>
+    Rented:<input type="checkbox" th:field="*{rented}" th:check="*{rented}"/>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2">
+                Cable
+        </button>
+        <div class="drop-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button" th:field="*{none}">NONE</button>
+            <button class="dropdown-item" type="button" th:field="*{basic}">BASIC</button>
+            <button class="dropdown-item" type="button" th:field="*{premium}">PREMIUM</button>
+        </div>
+    </div>
+    <button type ="submit">Add a room</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+</html>
